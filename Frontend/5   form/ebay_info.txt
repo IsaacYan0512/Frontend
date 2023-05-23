@@ -1,0 +1,22 @@
+
+action of the form:
+https://www.ebay.com.au/sch/i.html
+
+parameter for the keyword
+_nkw
+
+parameter for category
+_sacat
+
+value for category:
+All category =0
+Coins =11116
+Art =550
+Book & Magazine =267
+Stamps =260
+Music =11233
+
+
+
+
+

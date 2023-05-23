@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Exercise</title>
+
+    <script>
+
+      function showDate()
+      {
+        // get the current date
+        var today = new Date();
+        var todayDD = today.getDate();
+        var todayMM = today.getMonth() + 1;
+        var todayYYYY = today.getFullYear();
+
+        // display the date
+        var displayDiv = document.getElementById("dateDisplay");
+
+        displayDiv.innerHTML = "Today is " 
+         + todayDD + "-"
+         + todayMM + "-"
+         + todayYYYY ;
+      }
+
+    </script>
+  </head>
+
+  <body onLoad="showDate();">
+
+    <div id="dateDisplay">
+    </div>    
+
+  <body>
+</html>

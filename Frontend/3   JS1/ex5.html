@@ -1,0 +1,59 @@
+<html>
+
+  <head>
+    <title>Exercise</title>
+
+    <script>
+
+      var lionCount = 0;
+      var frogCount = 0;
+
+      function lionClick()
+      {
+        // increase the lion count
+        lionCount = lionCount + 1
+
+        // get lion span element
+        var lionSpan = document.getElementById("lionCountHolder");
+
+        // display the lion count in the lion span
+        lionSpan.innerHTML = lionCount;
+      }
+
+      function frogClick()
+      {
+        // increase the frog count
+        frogCount = frogCount + 1
+
+        // get frog span element
+        var frogSpan = document.getElementById("frogCountHolder");
+
+        // display the frog count in the frog span
+        frogSpan.innerHTML = frogCount;
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <img src="lion.png" height="150px" onClick="lionClick();" />
+
+    <img src="frog.png" height="150px" onClick="frogClick();" />
+
+    <br /><br />
+
+    <span style="color: orange;">
+      Number of lion clicks: 
+      <span id="lionCountHolder">0</span>
+    </span>
+
+    <br />
+
+    <span style="color: green;">
+      Number of frog clicks: 
+      <span id="frogCountHolder">0</span>
+    </span>
+
+  </body>
+
+</html>

@@ -1,0 +1,145 @@
+<html>
+
+  <head>
+    <title>canvas example</title>
+
+    <script>
+
+      function drawTriangle()
+      {
+        // get triangle coordinate from the user
+        var x1Input = document.getElementById("x1");
+        var x1 = Number(x1Input.value);
+
+        var y1Input = document.getElementById("y1");
+        var y1 = Number(y1Input.value);
+
+        var x2Input = document.getElementById("x2");
+        var x2 = Number(x2Input.value);
+
+        var y2Input = document.getElementById("y2");
+        var y2 = Number(y2Input.value);
+
+        var x3Input = document.getElementById("x3");
+        var x3 = Number(x3Input.value);
+
+        var y3Input = document.getElementById("y3");
+        var y3 = Number(y3Input.value);
+
+        // get canvas 2d context
+        var canvas = document.getElementById("mycanvas");
+        var context = canvas.getContext("2d");
+
+        // clear the canvas
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        // draw the triangle
+
+        // make the path for triangle
+        context.beginPath();
+        context.moveTo(x1, y1);
+        context.lineTo(x2, y2);
+        context.lineTo(x3, y3);
+        context.closePath();
+
+        // make the stroke
+        context.strokeStyle = "#8B008B";
+        context.lineWidth = "3";
+        context.stroke();
+
+        // make the fill
+        context.fillStyle = "#DDA0DD";
+        context.fill();
+
+        // draw medians
+        // straight line from a vertex 
+        // to the midpoint of the opposite side
+        context.strokeStyle = "white";
+        context.lineWidth = "2";
+
+        context.beginPath();
+        context.moveTo(x1, y1);
+        context.lineTo((x2+x3)/2, (y2+y3)/2);
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(x2, y2);
+        context.lineTo((x1+x3)/2, (y1+y3)/2);
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(x3, y3);
+        context.lineTo((x1+x2)/2, (y1+y2)/2);
+        context.stroke();
+
+        // put label for triangle vertices
+        context.fillStyle = "black";
+        context.font = "bold 20px Arial";
+        context.fillText("A", x1, y1);
+        context.fillText("B", x2, y2);
+        context.fillText("C", x3, y3);
+      }
+
+    </script>
+  </head>
+
+  <body>
+    
+    <table border="0">
+      <tr>
+        <td>
+          Enter coordinate for 1st point:
+        </td>
+        <td>
+          X = 
+          <input id="x1" type="text" size="10" />
+        </td>
+        <td>
+          Y = 
+          <input id="y1" type="text" size="10" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Enter coordinate for 2nd point:
+        </td>
+        <td>
+          X = 
+          <input id="x2" type="text" size="10" />
+        </td>
+        <td>
+          Y = 
+          <input id="y2" type="text" size="10" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Enter coordinate for 3rd point:
+        </td>
+        <td>
+          X = 
+          <input id="x3" type="text" size="10" />
+        </td>
+        <td>
+          Y = 
+          <input id="y3" type="text" size="10" />
+        </td>
+      </tr>
+    </table>
+
+    <br />
+
+    <canvas id="mycanvas" style="border-style: dashed;">
+    </canvas>
+
+    <br /><br />
+
+    <button onClick="drawTriangle()">
+      Draw triangle
+    </button>
+
+  </body>
+
+</html>

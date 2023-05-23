@@ -1,0 +1,112 @@
+<html>
+
+  <head>
+    <title>AJAX example</title>
+
+    <script>
+
+      // make ajax query
+      function makeAjaxQuery()
+      {
+        // create an XMLHttpRequest
+        var xhttp = new XMLHttpRequest();
+
+        // create a handler for the readyState change
+        xhttp.onreadystatechange = function(){
+          readyStateChangeHandler(xhttp);
+        };
+
+        // making query by async call
+        var queryUrl = "faculty.json";
+        xhttp.open("GET", queryUrl, true);
+        xhttp.send();
+      }
+
+      // handler for the readyState change
+      function readyStateChangeHandler(xhttp)
+      {
+        if(xhttp.readyState == XMLHttpRequest.DONE)
+        {
+          if(xhttp.status == 200)
+          {
+            // status = 200 means OK
+            handleStatusSuccess(xhttp);
+          }
+          else
+          {
+            // status is NOT OK
+            handleStatusFailure(xhttp);
+          }
+        }
+      }
+
+      // XMLHttpRequest failed
+      function handleStatusFailure(xhttp)
+      {
+        alert("AJAX request fail");
+        alert("readyState=" + xhttp.readyState);
+        alert("status=" + xhttp.status);
+      }
+
+      // XMLHttpRequest success
+      function handleStatusSuccess(xhttp)
+      {
+        //alert("AJAX request success");
+
+        // get the json
+        var jsonText = xhttp.responseText;
+        //alert(jsonText);
+
+        // parse the json into an object
+        var obj = JSON.parse(jsonText);
+
+        // display the object on the web page
+        display(obj);
+      }
+
+      // display the javascript object info on the webpage
+      function display(obj)
+      {
+        // get the display div element
+        var displayDiv = document.getElementById("display");
+
+        // construct result html
+        var html = "";
+
+        html += "<b>Name: </b>";
+        html += obj.name;
+        html += "<br />";
+
+        html += "<b>Abbreviation: </b>";
+        html += obj.abbreviation;
+        html += "<br />";
+
+        html += "<b>Email: </b>";
+        html += obj.email;
+        html += "<br />";
+
+        html += "<b>Website: </b>";
+        html += obj.web;
+
+
+        // display result in the display div
+        displayDiv.innerHTML = html;
+      }
+
+    </script>
+  </head>
+
+  <body>
+
+    <button onClick="makeAjaxQuery();">
+      Get Faculty Details
+    </button>
+    <br /><br />
+
+    <div id="display">
+    </div>
+
+
+  </body>
+
+</html>

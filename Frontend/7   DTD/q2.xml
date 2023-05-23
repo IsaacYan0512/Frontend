@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<dailyUpdate campus="Sydney" date="10/12/2017">
+
+  <staff operation="add">
+    <staffNumber>5682346</staffNumber>
+    <firstName>Mark</firstName>
+    <lastName>Wilson</lastName>
+  </staff>
+
+  <staff operation="update">
+    <staffNumber>4682357</staffNumber>
+    <firstName>John</firstName>
+    <lastName>Smith</lastName>
+  </staff>
+
+  <staff operation="add">
+    <staffNumber>5725790</staffNumber>
+    <firstName>Mandy</firstName>
+    <lastName>Zhang</lastName>
+  </staff>
+
+  <staff operation="add">
+    <staffNumber>6283917</staffNumber>
+    <firstName>Yoyo</firstName>
+    <lastName>Wasita</lastName>
+  </staff>
+
+  <staff operation="update">
+    <staffNumber>3683579</staffNumber>
+    <firstName>Mary</firstName>
+    <lastName>Jane</lastName>
+  </staff>
+
+</dailyUpdate>

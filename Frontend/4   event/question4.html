@@ -1,0 +1,36 @@
+<html>
+
+  <head>
+    <title>Exercise</title>
+
+    <script>
+      var FROG_FACE = "&#x1F438;";
+      
+      var frogFaceMessage = "";
+
+      function showFrogFace()
+      {
+        // update the frog face message
+        frogFaceMessage = frogFaceMessage + FROG_FACE;
+
+        // get the span element
+        var frogSpan = document.getElementById("frogFaceHolder");
+
+        // display the frog face in the span
+        frogSpan.innerHTML = frogFaceMessage;
+      }
+
+    </script>
+  </head>
+
+  <body>
+
+    <img src="frog.png" height="150px" onClick="showFrogFace();" />
+
+    <br /><br />
+
+    <span id="frogFaceHolder"></span>
+
+  </body>
+
+</html>

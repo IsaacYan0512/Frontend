@@ -1,0 +1,83 @@
+<html>
+
+  <head>
+    <title>Exercise</title>
+
+    <script>
+
+      function checkAnswer()
+      {
+        // get the 1st number
+        var inputField1 = document.getElementById("input1");
+        var number1 = Number(inputField1.value);
+
+        // get the 2nd number
+        var inputField2 = document.getElementById("input2");
+        var number2 = Number(inputField2.value);
+
+        // get the operation
+        var operationSelect = document.getElementById("operationSelect");
+        var operation = operationSelect.value;
+
+        // calculate the correct answer
+        var correctAnswer;
+
+        if(operation == "add")
+        {
+          correctAnswer = number1 + number2;
+        }
+        else if(operation == "subtract")
+        {
+          correctAnswer = number1 - number2;
+        }
+        else if(operation == "multiply")
+        {
+          correctAnswer = number1 * number2;
+        }
+
+        // get the user's answer
+        var answerField = document.getElementById("answer");
+        var userAnswer = Number(answerField.value);
+
+        // check user answer is correct or not
+        var checkMessageSpan = document.getElementById("checkMessage");
+
+        if (userAnswer == correctAnswer)
+        {
+          checkMessageSpan.innerHTML = "Correct!";
+        }
+        else
+        {
+          checkMessageSpan.innerHTML = "Incorrect, please try again.";
+        }
+
+      }
+
+    </script>
+  </head>
+
+  <body>
+
+    <input type="text" size="5" id="input1" />
+
+    <select id="operationSelect">
+      <option value="add"> + </option>
+      <option value="subtract"> - </option>
+      <option value="multiply"> x </option>
+    </select>
+
+    <input type="text" size="5" id="input2" />
+
+    =
+
+    <input type="text" size="5" id="answer" />
+
+    <button onClick="checkAnswer();">
+      Check
+    </button>
+
+    <span id="checkMessage"></span>
+
+  </body>
+
+</html>

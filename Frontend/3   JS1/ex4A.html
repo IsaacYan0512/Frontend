@@ -1,0 +1,39 @@
+<html>
+
+  <head>
+    <title>Exercise</title>
+
+    <script>
+      function roar()
+      {
+        // get the span element
+        var messageSpan = document.getElementById("messageHolder");
+
+        // display a message in the span element
+        messageSpan.innerHTML = "<span style='color: orange;'>Roar</span>";
+      }
+
+      function ribbit()
+      {
+        // get the span element
+        var messageSpan = document.getElementById("messageHolder");
+
+        // display a message in the span element
+        messageSpan.innerHTML = "<span style='color: green;'>Ribbit</span>";
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <img src="lion.png" height="150px" onClick="roar();" />
+
+    <img src="frog.png" height="150px" onClick="ribbit();" />
+
+    <br /><br />
+
+    <span id="messageHolder"></span>
+
+  </body>
+
+</html>

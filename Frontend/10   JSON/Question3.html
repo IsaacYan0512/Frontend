@@ -1,0 +1,70 @@
+<html>
+
+  <head>
+    <title>Question 3</title>
+
+    <script>
+      function showJson()
+      {
+        // get subject code
+        var subjectCodeTf = document.getElementById("codeInput");
+        var subjectCode = subjectCodeTf.value;
+
+        // get subject title
+        var subjectTitleTf = document.getElementById("titleInput");
+        var subjectTitle = subjectTitleTf.value;
+
+        // get subject cp
+        var subjectCpTf = document.getElementById("cpInput");
+        var subjectCp = Number(subjectCpTf.value);
+
+        // get subject core flag
+        var subjectCoreCheckbox = document.getElementById("coreInput");
+        var subjectCoreFlag = subjectCoreCheckbox.checked;
+        
+
+        // construct subject object
+        var subjectObj = {};
+        subjectObj.code = subjectCode;
+        subjectObj.title = subjectTitle;
+        subjectObj.cp = subjectCp;
+        subjectObj.coreFlag = subjectCoreFlag;
+
+        // translate object to JSON
+        var subjectJson = JSON.stringify(subjectObj, null, 2);
+
+        // display json in the textarea
+        var displayTextarea = document.getElementById("display");
+        displayTextarea.value = subjectJson;
+      }
+
+    </script>
+  </head>
+
+  <body>
+    Subject code:
+    <input type="text" id="codeInput" />
+    <br />
+
+    Subject title:
+    <input type="text" id="titleInput" />
+    <br />
+
+    Subject credit point:
+    <input type="text" id="cpInput" />
+    <br />
+
+    Core subject:
+    <input type="checkbox" id="coreInput" />
+    <br /><br />
+
+    <button onClick="showJson();">
+      View JSON
+    </button>
+    <br />
+
+    <textarea rows="7" cols="50" id="display">
+    </textarea>
+  </body>
+
+</html>

@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Exercise</title>
+
+    <script>
+
+      function executeCommand()
+      {
+        // get the command
+        var commandTf = document.getElementById("commandInput");
+        var command = commandTf.value;
+
+        // get image element
+        var animalImage = document.getElementById("animalDisplay");
+
+        // execute the command
+        if (command == "display frog")
+        {
+          animalImage.src = "frog.png";
+        }
+        else if (command == "display lion")
+        {
+          animalImage.src = "lion.png";
+        }
+        else
+        {
+          alert("Invalid command");
+        }
+      }
+
+    </script>
+  </head>
+
+  <body>
+
+    Enter command:
+    <input type="text" id="commandInput" onChange="executeCommand();" />
+    <br /><br />
+
+    <img id="animalDisplay" height="150px" />
+
+  <body>
+</html>

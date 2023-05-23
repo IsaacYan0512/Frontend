@@ -1,0 +1,45 @@
+<html>
+
+  <head>
+    <title>Exercise</title>
+
+    <script>
+      function showLion()
+      {
+        // get image element
+        var imageElement = document.getElementById("animalHolder");
+
+        // set the file name for the image
+        imageElement.src = "lion.png";
+      }
+
+      function showFrog()
+      {
+        // get image element
+        var imageElement = document.getElementById("animalHolder");
+
+        // set the file name for the image
+        imageElement.src = "frog.png";
+      }
+    </script>
+
+  </head>
+
+  <body>
+
+    <button onClick="showLion();">
+      Lion
+    </button>
+
+    <button onClick="showFrog();">
+      Frog
+    </button>
+
+    <br /><br />
+
+    <img id="animalHolder" height="200px" />
+
+
+  </body>
+
+</html>

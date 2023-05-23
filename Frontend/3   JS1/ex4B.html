@@ -1,0 +1,52 @@
+<html>
+
+  <head>
+    <title>Exercise</title>
+
+    <script>
+      function roar()
+      {
+        // get lion span element
+        var lionSpan = document.getElementById("lionHolder");
+
+        // display message in the lion span element
+        lionSpan.innerHTML = "Roar";
+
+        // get frog span element
+        var frogSpan = document.getElementById("frogHolder");
+
+        // remove message in the frog span element
+        frogSpan.innerHTML = "";
+      }
+
+      function ribbit()
+      {
+        // get frog span element
+        var frogSpan = document.getElementById("frogHolder");
+
+        // display message in the frog span element
+        frogSpan.innerHTML = "Ribbit";
+
+        // get lion span element
+        var lionSpan = document.getElementById("lionHolder");
+
+        // remove message in the lion span element
+        lionSpan.innerHTML = "";
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <img src="lion.png" height="150px" onClick="roar();" />
+
+    <img src="frog.png" height="150px" onClick="ribbit();" />
+
+    <br /><br />
+
+    <span id="lionHolder" style="color: orange;"></span>
+    <span id="frogHolder" style="color: green;"></span>
+
+  </body>
+
+</html>

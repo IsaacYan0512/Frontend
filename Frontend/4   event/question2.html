@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Exercise</title>
+
+    <script>
+
+      var leftAnimal = "lion";
+
+      function changeAnimal()
+      {
+        // get image element
+        var leftImage = document.getElementById("left");
+        var rightImage = document.getElementById("right");
+
+        // change image
+        if(leftAnimal == "lion")
+        {
+          leftAnimal = "frog";
+          leftImage.src = "frog.png";
+          rightImage.src = "lion.png";
+        }
+        else
+        {
+          leftAnimal = "lion";
+          leftImage.src = "lion.png";
+          rightImage.src = "frog.png";
+        }
+      }
+
+    </script>
+  </head>
+
+  <body>
+
+    Move the mouse over the images
+    <br /><br />
+
+    <img id="left" onMouseOver="changeAnimal();" src="lion.png" height="150px" />  
+    <img id="right" onMouseOver="changeAnimal();" src="frog.png" height="150px" />
+
+  <body>
+</html>

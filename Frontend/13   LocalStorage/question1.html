@@ -1,0 +1,56 @@
+<html>
+
+  <head>
+    <title>local storage example</title>
+
+    <script>
+
+      function validateJson()
+      {
+        // get the json text from textarea
+        var jsonTextarea = document.getElementById("jsonInput");
+        var jsonText = jsonTextarea.value;
+
+        // get message span
+        var messageSpan = document.getElementById("messageDisplay");
+
+        // parse the json text
+        try
+        {
+          JSON.parse(jsonText);
+          
+          messageSpan.innerHTML = "<span style='color:green;'>JSON is valid</span>";
+        }
+        catch(ex)
+        {
+          var message = "Error: " + ex.message;
+
+          messageSpan.innerHTML = 
+            "<span style='color:red;'>" 
+            + message
+            + "</span>";
+        }
+        
+      }
+
+    </script>
+  </head>
+
+  <body>
+    
+    Enter JSON to validate:
+    <br />
+
+    <textarea id="jsonInput" rows="10" cols="50"></textarea>
+    <br />
+
+    <button onClick="validateJson()">
+      Validate JSON
+    </button>
+
+    <span id="messageDisplay">
+    </span>
+
+  </body>
+
+</html>
